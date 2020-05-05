@@ -58,7 +58,8 @@ public class LocalDirectoryReader extends Reader {
                     if (file.isDirectory()) {
                         if (file.getName().equals("src")) {
                             sourcePaths.add(file.getCanonicalPath() + "/main/java");
-                        } else {
+                            sourcePaths.add(file.getCanonicalPath() + "/test/java");
+                        }  else {
                             findSourcePaths(file, sourcePaths);
                         }
                     }
@@ -87,7 +88,7 @@ public class LocalDirectoryReader extends Reader {
                 if (file.isDirectory()) {
                     getJavaFiles(file, files);
                 } else {
-                    if (file.getName().contains("java")) {
+                    if (file.getName().endsWith("java")) {
                         files.put(file.getAbsolutePath(),
                                 parseJavaToString(file.getAbsolutePath()));
                     }
@@ -118,13 +119,9 @@ public class LocalDirectoryReader extends Reader {
     }
 
     @Override
-    public void readMetrics(File localRoot, String directory, ProgramBuilder builder) throws IOException {
-            Program program = builder.buildProgram(localRoot.getAbsolutePath() + "/", directory, this);
-            String dirs[] = directory.split("/");
-            String absolutePath = localRoot + "/" + dirs[0] + "/" + dirs[1] + "/" + dirs[2];
-            String commit = dirs[3];
-            generateJsonFiles(program, absolutePath, commit);
-            FileUtils.deleteDirectory(new File(localRoot + "/" + directory));
+    public void readMetrics(String project_dir, String out_dir, ProgramBuilder builder) throws IOException {
+            Program program = builder.buildProgram(project_dir, this);
+            generateJsonFiles(program, out_dir);
     }
 
 }

@@ -20,7 +20,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        org.baeldung.executable.ExecutableMavenJar
+                                        main.MainMetrics
                                     </mainClass>
                                 </manifest>
                             </archive>

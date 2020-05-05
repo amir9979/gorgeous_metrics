@@ -32,6 +32,6 @@ public abstract class Reader<T> {
 
     public abstract HashMap<String, String> getJavaFiles(T path, HashMap<String, String> files);
     
-    public abstract void readMetrics(File localRoot, String directory,ProgramBuilder builder) throws IOException;
+    public abstract void readMetrics(String project_dir, String out_dir, ProgramBuilder builder) throws IOException;
     
 }

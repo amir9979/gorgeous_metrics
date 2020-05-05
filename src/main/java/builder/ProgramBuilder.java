@@ -56,8 +56,8 @@ public class ProgramBuilder {
         return programs;
     }
 
-    public Program buildProgram(String rootPath, String dirPath, Reader reader) {
-        Set<String> sourcePaths = reader.findSourcePaths(rootPath + dirPath);
+    public Program buildProgram(String project_dir, Reader reader) {
+        Set<String> sourcePaths = reader.findSourcePaths(project_dir);
 
         HashMap<String, String> javaFiles = new HashMap<>();
         for (String sourcePath : sourcePaths) {
@@ -65,10 +65,10 @@ public class ProgramBuilder {
         }
         if (sourcePaths.size() > 1) {
             sourcePaths = new HashSet();
-            sourcePaths.add(rootPath + dirPath);
+            sourcePaths.add(project_dir);
         }
         List<Class> classes = buildClasses(sourcePaths, javaFiles);
-        String name = dirPath.substring(dirPath.indexOf("/") + 1, dirPath.length() - 1).replaceAll("/", "_");
+        String name = project_dir.substring(project_dir.indexOf("/") + 1, project_dir.length() - 1).replaceAll("/", "_");
         Program program = buildProgram(name, classes);
         return program;
     }
@@ -84,8 +84,6 @@ public class ProgramBuilder {
                 parser.setResolveBindings(true);
                 parser.setBindingsRecovery(true);
                 parser.setStatementsRecovery(true);
-                //sourcePaths = new ArrayList<>();
-                //sourcePaths.add("/Users/thaina/Downloads/repositories/cmacnaug-meshkeeper/Fri_Nov_06_011719_EST_2009/AR_046ca22155adfd7a40d36cc6ece9267eb4f4335d");
                 String[] sourcePathsArray = sourcePaths.toArray(new String[sourcePaths.size()]);
                 parser.setEnvironment(null, sourcePathsArray, null, true);
                 parser.setUnitName(file.getKey());
