@@ -219,13 +219,17 @@ public class MetricsCalculator {
     public List<String> getUserDefinedTypes(List<Type> elementsTypes) {
         List<String> userDefinedTypes = new ArrayList<>();
         for (Type elementType : elementsTypes) {
+            if(elementType == null || elementType.resolveBinding() == null){
+                continue;
+            }
+
             if (elementType.resolveBinding().isFromSource()) {
                 userDefinedTypes.add(elementType.resolveBinding().getTypeDeclaration().getQualifiedName());
             }
             //collects the user-defined types passed as parameters, eg: List<A>
             if (elementType.isParameterizedType()) {
                 ParameterizedType type = (ParameterizedType) elementType;
-                for (Iterator it = type.typeArguments().iterator(); it.hasNext();) {
+                for (Iterator it = type.typeArguments().iterator(); it.hasNext(); ) {
                     Type typeArgument = (Type) it.next();
                     if (typeArgument.resolveBinding().isFromSource()) {
                         userDefinedTypes.add(typeArgument.resolveBinding().getQualifiedName());
@@ -243,6 +247,9 @@ public class MetricsCalculator {
 
     //if the element or one of its parameters is userdefined type
     public boolean isUserDefinedType(Type elementType) {
+        if(elementType == null || elementType.resolveBinding() == null){
+            return false;
+        }
         if (elementType.resolveBinding().isFromSource()) {
             return true;
         }
