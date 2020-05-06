@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3125eaa2-66a2-4678-921e-dcbcd8cf14d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/calculator/MetricsCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/calculator/MetricsCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/writers/JsonWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/writers/JsonWriter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,19 +74,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/writers/JsonWriter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="33" column="50" lean-forward="true" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
+            <state relative-caret-position="204">
+              <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/calculator/MetricsCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="629">
               <caret line="217" column="13" lean-forward="true" selection-start-line="217" selection-start-column="13" selection-end-line="217" selection-end-column="13" />
               <folding>
                 <element signature="e#12859#12860#0" expanded="true" />
@@ -197,8 +197,8 @@
         <option value="$PROJECT_DIR$/src/main/java/readers/Reader.java" />
         <option value="$PROJECT_DIR$/src/main/java/readers/LocalDirectoryReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/builder/ProgramBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/writers/JsonWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/calculator/MetricsCalculator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/writers/JsonWriter.java" />
       </list>
     </option>
   </component>
@@ -299,7 +299,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="MetricsCalculator&#9;FILE&#9;file://C:/Users/User/Documents/GitHub/gorgeous_metrics/src/main/java/calculator/MetricsCalculator.java&#10;main&#9;PSI&#9;JAVA://main.MainMetrics" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588724581264" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588727158263" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -513,13 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/writers/JsonWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="33" column="50" lean-forward="true" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/org.eclipse.jdt.core/3.13.102/org.eclipse.jdt.core-3.13.102.jar!/org/eclipse/jdt/core/dom/BindingResolver.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -544,7 +537,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/calculator/MetricsCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="629">
           <caret line="217" column="13" lean-forward="true" selection-start-line="217" selection-start-column="13" selection-end-line="217" selection-end-column="13" />
           <folding>
             <element signature="e#12859#12860#0" expanded="true" />
@@ -552,6 +545,13 @@
             <element signature="e#14616#14617#0" expanded="true" />
             <element signature="e#14668#14669#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/writers/JsonWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
         </state>
       </provider>
     </entry>

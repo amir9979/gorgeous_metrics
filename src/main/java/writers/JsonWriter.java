@@ -28,16 +28,16 @@ public class JsonWriter {
         ObjectMapper mapper = new ObjectMapper();
         try (final JsonGenerator generator = factory.createGenerator(new File(out_dir + "/" + "_metrics.json"), JsonEncoding.UTF8)) {
             generator.setCodec(mapper);
-            generator.writeStartArray();
+            generator.writeStartObject();
             for (Class classe : classes) {
-                generator.writeStartObject();
+//                generator.writeStartObject();
 //                generator.writeFieldName("name");
                 generator.writeFieldName(classe.getName());
 //                generator.writeFieldName("metrics");
                 generator.writeObject(classe.getMetrics());
-                generator.writeEndObject();
+//                generator.writeEndObject();
             }
-            generator.writeEndArray();
+            generator.writeEndObject();
             generator.close();
         }
     }
