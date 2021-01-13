@@ -5,6 +5,7 @@
  */
 package calculator;
 
+import builder.ProgramBuilder;
 import elements.Class;
 import elements.Field;
 import elements.Method;
@@ -162,7 +163,10 @@ public class MetricsCalculator {
     public Set<String> getTypes(List<Type> elementsTypes, Class c) {
         Set<String> types = new HashSet<>();
         for (Type elementType : elementsTypes) {
-            types.add(getType(c, elementType));
+            String type = getType(c, elementType);
+            if (type == null)
+                continue;
+            types.add(type);
             if (elementType.isParameterizedType()) {
                 types.addAll(getParameterizedType(c, elementType));
             }
@@ -174,8 +178,12 @@ public class MetricsCalculator {
         String name = "";
         String qualifiedName = "";
         if (elementType.isWildcardType()) {
-            name = elementType.resolveBinding().getErasure().getName();
-            qualifiedName = elementType.resolveBinding().getErasure().getQualifiedName();
+            try {
+                name = elementType.resolveBinding().getErasure().getName();
+                qualifiedName = elementType.resolveBinding().getErasure().getQualifiedName();
+            } catch (Exception ex) {
+                return null;
+            }
         } else {
             name = elementType.resolveBinding().getTypeDeclaration().getName();
             qualifiedName = elementType.resolveBinding().getTypeDeclaration().getQualifiedName();
@@ -207,7 +215,10 @@ public class MetricsCalculator {
         ParameterizedType type = (ParameterizedType) elementType;
         for (Iterator it = type.typeArguments().iterator(); it.hasNext();) {
             Type typeArgument = (Type) it.next();
-            types.add(getType(c, typeArgument));
+            String type1 = getType(c, typeArgument);
+            if (type1 == null)
+                continue;
+            types.add(type1);
             if (typeArgument.isParameterizedType()) {
                 types.addAll(getParameterizedType(c, typeArgument));
             }
